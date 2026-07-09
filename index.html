@@ -5,75 +5,136 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#050505">
 <link rel="manifest" href="manifest.json">
-<title>LK Race Ops</title>
+<title>LK Race Ops — Townsville</title>
 <style>
-:root{--bg:#050505;--card:#151515;--line:#333;--yellow:#ffd21a;--text:#f4f4f4;--muted:#aaa;--red:#d71920;--green:#18a558}
-*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
-header{position:sticky;top:0;background:#080808;border-bottom:1px solid #222;padding:16px;z-index:10}
-h1{font-size:22px;margin:0} .sub{font-size:13px;color:var(--muted);margin-top:3px}
-nav{display:flex;gap:8px;overflow:auto;padding-top:12px}
-nav button{border:0;border-radius:999px;padding:10px 14px;background:#242424;color:#fff;font-weight:800;white-space:nowrap}
+:root{--bg:#050505;--card:#151515;--soft:#202020;--line:#333;--yellow:#ffd21a;--text:#f4f4f4;--muted:#aaa;--red:#d71920;--orange:#ff9900;--green:#14c65a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}
+header{position:sticky;top:0;background:#080808;border-bottom:1px solid #222;padding:14px 14px 10px;z-index:20}
+h1{font-size:21px;margin:0}.sub{font-size:13px;color:var(--muted);margin-top:3px}
+nav{display:flex;gap:8px;overflow-x:auto;padding-top:11px}
+nav button{border:0;border-radius:999px;padding:10px 14px;background:#242424;color:#fff;font-weight:850;white-space:nowrap}
 nav button.active{background:var(--yellow);color:#111}
-main{padding:14px;max-width:980px;margin:0 auto}.tab{display:none}.tab.active{display:block}
-.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px;margin:12px 0}.hot{border-color:var(--yellow);box-shadow:0 0 0 2px rgba(255,210,26,.16)}
-.label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.title{font-size:32px;font-weight:900;color:var(--yellow);line-height:1.05;margin:7px 0}
-.timer{font-size:52px;font-weight:950;color:var(--yellow);line-height:1;letter-spacing:.03em}.small{color:var(--muted);font-size:14px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:700px){.grid{grid-template-columns:1fr}.timer{font-size:44px}.title{font-size:26px}}
+main{padding:12px;max-width:1050px;margin:0 auto}.tab{display:none}.tab.active{display:block}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:15px;margin:11px 0}.hot{border-color:var(--yellow);box-shadow:0 0 0 2px rgba(255,210,26,.16)}
+.label{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}.title{font-size:30px;font-weight:950;color:var(--yellow);line-height:1.05;margin:7px 0}
+.timer{font-size:54px;font-weight:950;color:var(--yellow);line-height:1;letter-spacing:.03em}.small{color:var(--muted);font-size:14px}.mini{font-size:13px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+@media(max-width:760px){.grid,.grid3{grid-template-columns:1fr}.timer{font-size:45px}.title{font-size:25px}}
 .driver{display:grid;grid-template-columns:92px 1fr;gap:14px;align-items:center}.num{background:var(--red);border-radius:15px;text-align:center;font-size:42px;font-weight:950;padding:18px 5px}
-.pill{display:inline-block;background:#252525;border:1px solid #333;border-radius:999px;padding:6px 10px;margin:3px}.yellow{color:var(--yellow);font-weight:900}.green{color:var(--green);font-weight:900}
-table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid #2b2b2b;padding:9px 5px;text-align:left;vertical-align:top}th{color:var(--yellow)}
-button.main{background:var(--yellow);color:#111;border:0;border-radius:14px;padding:12px 14px;font-weight:900}.done{opacity:.45}.urgent{color:#ff6666;font-weight:900}
-input[type=checkbox]{transform:scale(1.3);margin-right:10px} textarea{width:100%;min-height:180px;background:#080808;color:white;border:1px solid #333;border-radius:14px;padding:12px;font-size:16px}
+.pill{display:inline-block;background:#252525;border:1px solid #333;border-radius:999px;padding:6px 10px;margin:3px}.yellow{color:var(--yellow);font-weight:900}.green{color:var(--green);font-weight:900}.urgent{color:#ff6666;font-weight:900}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{border-bottom:1px solid #2b2b2b;padding:8px 5px;text-align:left;vertical-align:top}th{color:var(--yellow)}
+button.main{background:var(--yellow);color:#111;border:0;border-radius:14px;padding:12px 14px;font-weight:900}
+input[type=checkbox]{transform:scale(1.25);margin-right:10px}.checkrow{padding:8px 0;border-bottom:1px solid #252525}
+textarea,input{width:100%;background:#080808;color:white;border:1px solid #333;border-radius:12px;padding:10px;font-size:16px} textarea{min-height:160px}
+.kpi{background:#0b0b0b;border:1px solid #2b2b2b;border-radius:14px;padding:12px}.kpi b{color:var(--yellow)}
+.sectionTitle{font-size:20px;margin:10px 0;color:var(--yellow)}
+.statusRed{color:#ff6060}.statusOrange{color:var(--orange)}.statusGreen{color:var(--green)}
 </style>
 </head>
 <body>
 <header>
 <h1>LK Race Ops — Townsville GR Cup</h1>
-<div class="sub">Cars 22 Cattach & 71 Thornton • AEST • Offline/PWA ready</div>
+<div class="sub">Cars 22 Cattach & 71 Thornton • AEST • Race-ready V1</div>
 <nav id="nav">
-<button data-tab="timing" class="active">Timing</button><button data-tab="drivers">Drivers</button><button data-tab="ops">Ops</button><button data-tab="schedule">Schedule</button><button data-tab="check">Checklist</button><button data-tab="notes">Notes</button>
+<button data-tab="timing" class="active">Timing</button>
+<button data-tab="drivers">Drivers</button>
+<button data-tab="ops">Ops</button>
+<button data-tab="team">Team Mgmt</button>
+<button data-tab="engineering">Engineering</button>
+<button data-tab="schedule">Schedule</button>
+<button data-tab="notes">Notes</button>
 </nav>
 </header>
+
 <main>
 <section id="timing" class="tab active">
-<div class="card hot"><div class="label">Next action</div><div id="nextTitle" class="title">Loading…</div><div id="nextMeta" class="small"></div><div id="countdown" class="timer">--:--:--</div><p id="status" class="small"></p><button class="main" id="soundBtn">Enable/Test Alarm</button></div>
-<div class="card"><div class="label">Following action</div><div id="followTitle" class="title">Loading…</div><div id="followMeta" class="small"></div><div id="followCountdown" class="timer">--:--:--</div></div>
-<div class="card"><div class="label">Live clock</div><div id="clock" class="title">--:--:--</div></div>
+<div class="card hot">
+ <div class="label">Next action</div>
+ <div id="nextTitle" class="title">Loading…</div>
+ <div id="nextMeta" class="small"></div>
+ <div id="countdown" class="timer">--:--:--</div>
+ <p id="status" class="small"></p>
+ <button class="main" id="soundBtn">Enable/Test Alarm</button>
+</div>
+<div class="grid">
+ <div class="card"><div class="label">Following</div><div id="followTitle" class="title">Loading…</div><div id="followMeta" class="small"></div><div id="followCountdown" class="timer">--:--:--</div></div>
+ <div class="card"><div class="label">Live clock</div><div id="clock" class="title">--:--:--</div><div class="small">Keep this page open. It runs from the published GitHub page and should cache offline after first load.</div></div>
+</div>
+<div class="card"><div class="label">Don't forget now</div><div id="dontForget"></div></div>
 </section>
 
 <section id="drivers" class="tab">
 <div class="grid">
-<div class="card driver"><div class="num">22</div><div><h2>Ashton Cattach</h2><p><span class="yellow">Practice callout P9</span></p><p>Two cars ahead:<br><span class="pill">67 Gerges</span><span class="pill">99 Stewart</span></p><p>Pit lane: <b>Pos 18</b> — in front of <b>Brad Jones Racing</b></p></div></div>
-<div class="card driver"><div class="num">71</div><div><h2>Craig Thornton</h2><p><span class="yellow">Practice callout P18</span></p><p>Two cars ahead:<br><span class="pill">43 Hay-Bartlem</span><span class="pill">2 Teleskivi</span></p><p>Pit lane: <b>Pos 17</b> — in front of <b>R&amp;J Batteries Racing</b></p></div></div>
+ <div class="card driver"><div class="num">22</div><div><h2>Ashton Cattach</h2><p><span class="yellow">Practice callout P9</span></p><p>Two cars ahead:<br><span class="pill">67 Gerges</span><span class="pill">99 Stewart</span></p><p>Pit lane: <b>Pos 18</b> — in front of <b>Brad Jones Racing</b></p></div></div>
+ <div class="card driver"><div class="num">71</div><div><h2>Craig Thornton</h2><p><span class="yellow">Practice callout P18</span></p><p>Two cars ahead:<br><span class="pill">43 Hay-Bartlem</span><span class="pill">2 Teleskivi</span></p><p>Pit lane: <b>Pos 17</b> — in front of <b>R&amp;J Batteries Racing</b></p></div></div>
 </div>
+<div class="card"><h2>Practice Callout Reference</h2><p>Car 22 is called after 67/99. Car 71 is called after 43/2. Use this for P1/P2 marshalling only unless category updates the order.</p></div>
 </section>
 
 <section id="ops" class="tab">
-<div class="card"><h2>Key Procedures</h2>
-<p><b>No weaving / breaking traction:</b> from <span class="yellow">Turn 13</span> on formation lap.</p>
-<p><b>SC lights out:</b> nominally <span class="yellow">Turn 3</span>.</p>
-<p><b>Practice/quali start:</b> full course yellow until paddock gates closed; no overtaking; reduced speed; 5 car length gap.</p>
-<p><b>End of sessions:</b> full cool-down lap, exit drivers left between T1 and T2 into support paddock.</p>
-<p><b>Pit speed:</b> 40 km/h. TGRA pit lane crew limit: 2 per car.</p>
-<p><b>Pole side:</b> <span class="urgent">TBC — not found in docs.</span></p></div>
-<div class="card"><h2>Fuel</h2><p>Thu 14:00 deliver 2 x 20L. Fri 07:30 collect / 08:00 deliver / 15:30 collect / 16:30 deliver. Sat 15:30 collect / 16:30 deliver. Sun 15:00 collect ALL. Contact Matthew Smith 0490 736 407.</p></div>
+<div class="grid">
+ <div class="card"><h2>Start / Restart</h2><p><b>No weaving / breaking traction:</b> from <span class="yellow">Turn 13</span> on formation lap.</p><p><b>SC lights out:</b> nominally <span class="yellow">Turn 3</span>.</p><p><b>Pole side:</b> <span class="urgent">TBC — confirm at briefing/grid.</span></p></div>
+ <div class="card"><h2>Session Rules</h2><p><b>Practice/quali start:</b> full course yellow until paddock gates closed; no overtaking; reduced speed; 5 car length gap.</p><p><b>End sessions:</b> full cool-down lap, exit drivers left between T1 and T2.</p><p><b>Pit speed:</b> 40 km/h. <b>Pit crew:</b> 2 per car.</p></div>
+</div>
+<div class="card"><h2>Track Limits / Parc Fermé</h2><p>T8 loop: lap deleted in practice/quali; race penalty may apply. Walls define track limits unless yellow track edge line. Parc fermé: cars nose in at 45 degrees to garage bay unless directed.</p></div>
 </section>
 
-<section id="schedule" class="tab"><div class="card"><h2>Schedule</h2><table><thead><tr><th>Day</th><th>Time</th><th>Action</th></tr></thead><tbody id="scheduleBody"></tbody></table></div></section>
+<section id="team" class="tab">
+<div class="grid">
+ <div class="card"><h2>Bump-in / Thursday</h2><div id="bumpChecks"></div></div>
+ <div class="card"><h2>Critical Session Checks</h2><div id="criticalChecks"></div></div>
+</div>
+<div class="card"><h2>Post-session must-do</h2><div id="postChecks"></div></div>
+</section>
 
-<section id="check" class="tab"><div class="card"><h2>Don't Forget</h2><div id="checks"></div></div></section>
+<section id="engineering" class="tab">
+<div class="grid3">
+ <div class="card"><h2>Session Info</h2>
+  <label>Session Number / Name<input id="engSession"></label><br><br>
+  <label>Ambient Temp<input id="engAmbient"></label><br><br>
+  <label>Track Temp<input id="engTrack"></label><br><br>
+  <label>Track Speed<input id="engSpeed"></label>
+ </div>
+ <div class="card"><h2>Fuel Calc</h2>
+  <label>Session Length min<input id="fuelMins" type="number" value="25"></label><br><br>
+  <label>Lap Time sec<input id="lapSec" type="number" value="90"></label><br><br>
+  <label>Fuel Burn L/lap<input id="burn" type="number" step="0.1" value="0.7"></label><br><br>
+  <div class="kpi">Possible laps: <b id="lapsOut">--</b><br>Total fuel: <b id="fuelOut">--</b></div>
+ </div>
+ <div class="card"><h2>Quick Setup</h2>
+  <label>Ride Height<input id="rideHeight"></label><br><br>
+  <label>Camber<input id="camber"></label><br><br>
+  <label>Toe<input id="toe"></label><br><br>
+  <label>Brake Bias<input id="bias"></label>
+ </div>
+</div>
+<div class="card"><h2>Tyre Pressures</h2>
+<table><thead><tr><th>Session</th><th>Cold</th><th>Hot 1</th><th>Hot 2</th><th>Notes</th></tr></thead><tbody id="pressureBody"></tbody></table>
+</div>
+</section>
 
-<section id="notes" class="tab"><div class="card"><h2>Weekend Notes</h2><textarea id="notesBox" placeholder="Type notes here. Saves on this device."></textarea></div></section>
+<section id="schedule" class="tab">
+<div class="card"><h2>Full Schedule</h2><table><thead><tr><th>Day</th><th>Time</th><th>Action</th></tr></thead><tbody id="scheduleBody"></tbody></table></div>
+</section>
+
+<section id="notes" class="tab">
+<div class="card"><h2>Weekend Notes</h2><textarea id="notesBox" placeholder="Type notes here. Saves on this device."></textarea></div>
+<div class="card"><h2>Contacts</h2><p>RaceFuels: Matthew Smith — 0490 736 407</p><p>Category: Paul Martin — 0412 175 639</p><p>Race Director: Jennifer Campbell — 0406 442 322</p></div>
+</section>
 </main>
 
 <script>
 const events=[
 ["2026-07-09T12:55:00+10:00","Thu","12:55","Meet TGRA caravan for Track Walk"],
 ["2026-07-09T13:00:00+10:00","Thu","13:00","Guided Track Walk"],
+["2026-07-09T14:00:00+10:00","Thu","14:00","Fuel container delivery"],
 ["2026-07-09T14:30:00+10:00","Thu","14:30","RMC radio check"],
 ["2026-07-09T15:00:00+10:00","Thu","15:00","Documentation check"],
 ["2026-07-09T16:30:00+10:00","Thu","16:30","Team Managers & Drivers Briefing"],
 ["2026-07-09T16:45:00+10:00","Thu","16:45","DSA & Mentor Session"],
+["2026-07-10T07:30:00+10:00","Fri","07:30","Fuel collect"],
+["2026-07-10T08:00:00+10:00","Fri","08:00","Fuel delivery"],
 ["2026-07-10T08:50:00+10:00","Fri","08:50","P1 — drivers in cars"],
 ["2026-07-10T08:55:00+10:00","Fri","08:55","P1 — cars to marshalling"],
 ["2026-07-10T09:15:00+10:00","Fri","09:15","Practice 1 starts — 20 min"],
@@ -83,6 +144,8 @@ const events=[
 ["2026-07-10T14:10:00+10:00","Fri","14:10","Quali — drivers in cars"],
 ["2026-07-10T14:15:00+10:00","Fri","14:15","Quali — cars to marshalling"],
 ["2026-07-10T14:35:00+10:00","Fri","14:35","Qualifying starts — 15 min"],
+["2026-07-10T15:30:00+10:00","Fri","15:30","Fuel collect"],
+["2026-07-10T16:30:00+10:00","Fri","16:30","Fuel delivery"],
 ["2026-07-11T09:00:00+10:00","Sat","09:00","Race 1 — drivers in cars"],
 ["2026-07-11T09:05:00+10:00","Sat","09:05","Race 1 — cars to marshalling"],
 ["2026-07-11T09:25:00+10:00","Sat","09:25","Race 1 starts — 25 min"],
@@ -95,6 +158,8 @@ const events=[
 ["2026-07-11T14:30:00+10:00","Sat","14:30","Race 2 SD cards due"],
 ["2026-07-11T14:40:00+10:00","Sat","14:40","Race 2 incident review closes"],
 ["2026-07-11T15:00:00+10:00","Sat","15:00","Race 2 podium"],
+["2026-07-11T15:30:00+10:00","Sat","15:30","Fuel collect"],
+["2026-07-11T16:30:00+10:00","Sat","16:30","Fuel delivery"],
 ["2026-07-12T12:35:00+10:00","Sun","12:35","Race 3 — drivers in cars"],
 ["2026-07-12T12:40:00+10:00","Sun","12:40","Race 3 — cars to marshalling"],
 ["2026-07-12T13:00:00+10:00","Sun","13:00","Race 3 starts — 25 min"],
@@ -104,25 +169,47 @@ const events=[
 ["2026-07-12T14:30:00+10:00","Sun","14:30","Log books/licences"],
 ["2026-07-12T15:00:00+10:00","Sun","15:00","Final fuel collection"]
 ].map(e=>({date:new Date(e[0]),day:e[1],time:e[2],title:e[3]}));
+
+const bump=["Pit lane disclaimers/accreditation","Logbook handed in","Drivers brief time/location confirmed","Track walk/grid position confirmed","Pole side confirmed","Pit lane allocation confirmed","Start/SC lights out notes confirmed","MOTEC GPS set","Tail/rain light check","Radio/Dorian charged","FIA IDR app active","Brake set/bled","RMC radio checked","Spill kit/extinguisher in garage","Tender/trolleys ready","Tyre mounting/direction check","Min weight check with driver","Throttle body/pedal % check","GBOX/engine tags","Driver ballast tagged/installed","Ride height/camber check","Upload onboard to desktop","Check Vbox operation"];
+const critical=["Tyres stripped/direction check","Pressure set & leak check","Tender packed","Aerial on/tight","Scales zeroed","Tyre set marked/scanned","Min weight check fuel","Fuel set/fuel zero","Vbox/Data card in","Water bottle","RMC scanning team & car","TC/stability switch","Rain light/rain dash","Wheel torque","Pressures set","Valve caps on","Disconnect battery charger","Bonnet pins","Window nets","Driver belts/HANS","Radio and drink tube","Mirrors check","Clutch position / launch %","Previous session incidents","Grid spot","Wind direction","Laps remaining","Breaking traction limit"];
+const post=["Park at 45° — no one touch","Parc fermé/scales call","No one in garage until cleared","Pressures recorded","Video card to caravan","Data out after parc fermé","Fuel out","Radio off/on charge","Note pressures overnight","All crew pass & car pass","Log book received back"];
+
 function pad(n){return n<10?"0"+n:n}
 function fmt(ms){if(ms<0)ms=0;let s=Math.floor(ms/1000),h=Math.floor(s/3600);s%=3600;let m=Math.floor(s/60);s%=60;return `${pad(h)}:${pad(m)}:${pad(s)}`}
 function $(id){return document.getElementById(id)}
+function saveInput(el){el.value=localStorage.getItem(el.id)||"";el.oninput=()=>localStorage.setItem(el.id,el.value)}
 function tick(){
  const now=new Date(); $("clock").textContent=`${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
- const upcoming=events.filter(e=>e.date>now);
- const n=upcoming[0], f=upcoming[1];
+ const upcoming=events.filter(e=>e.date>now), n=upcoming[0], f=upcoming[1];
  if(!n){$("nextTitle").textContent="Weekend complete";$("countdown").textContent="00:00:00";return}
- $("nextTitle").textContent=n.title;$("nextMeta").textContent=`${n.day} ${n.time}`;$("countdown").textContent=fmt(n.date-now);
+ const left=n.date-now;
+ $("nextTitle").textContent=n.title;$("nextMeta").textContent=`${n.day} ${n.time}`;$("countdown").textContent=fmt(left);
+ $("status").innerHTML = left < 5*60*1000 ? "<span class='statusRed'>UNDER 5 MINUTES — MOVE NOW</span>" : left < 15*60*1000 ? "<span class='statusOrange'>UNDER 15 MINUTES — PREP NOW</span>" : "<span class='statusGreen'>Timer running</span>";
  if(f){$("followTitle").textContent=f.title;$("followMeta").textContent=`${f.day} ${f.time}`;$("followCountdown").textContent=fmt(f.date-now)}
- $("status").textContent = (n.date-now < 10*60*1000) ? "LESS THAN 10 MINUTES — MOVE NOW" : "Action timer running";
+ let df=["Radios on/charged","SD cards/cameras checked","Drivers know next action"];
+ if(n.title.includes("drivers in cars")) df=["Tyres/pressures set","Wheel torque","Radios + drink tube","Belts/HANS/window net","Both drivers briefed"];
+ if(n.title.includes("SD cards")) df=["Get SD cards immediately","Download MoTeC","Upload onboard","Write quick debrief notes"];
+ if(n.title.includes("Fuel")) df=["Fuel containers ready","Confirm with RaceFuels","Update fuel sheet"];
+ $("dontForget").innerHTML=df.map(x=>`<span class="pill">${x}</span>`).join("");
+}
+function checkboxList(container, items, key){
+ $(container).innerHTML=items.map((x,i)=>`<div class="checkrow"><label><input type="checkbox" id="${key}${i}">${x}</label></div>`).join("");
+ items.forEach((x,i)=>{const el=$(`${key}${i}`);el.checked=localStorage.getItem(`${key}${i}`)==="1";el.onchange=()=>localStorage.setItem(`${key}${i}`,el.checked?"1":"0")});
+}
+function calcFuel(){
+ const mins=parseFloat($("fuelMins").value)||0, lap=parseFloat($("lapSec").value)||0, burn=parseFloat($("burn").value)||0;
+ const laps=lap?Math.ceil((mins*60)/lap):0; $("lapsOut").textContent=laps; $("fuelOut").textContent=(laps*burn).toFixed(1)+" L";
 }
 function init(){
  document.querySelectorAll("nav button").forEach(b=>b.onclick=()=>{document.querySelectorAll("nav button,.tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");$(b.dataset.tab).classList.add("active")});
  $("scheduleBody").innerHTML=events.map(e=>`<tr><td>${e.day}</td><td>${e.time}</td><td>${e.title}</td></tr>`).join("");
- const items=["Charge radios","RMC radio on 473.850 MHz D306N","SD cards out of cars after each race","MoTeC download after each session","Fuel collect/deliver times","Drivers debriefed before next session","Check tyre pressures/wheel nuts","Log books/licences Sunday 14:30"];
- $("checks").innerHTML=items.map((x,i)=>`<p><label><input type="checkbox" id="c${i}">${x}</label></p>`).join("");
- items.forEach((x,i)=>{const el=$("c"+i);el.checked=localStorage.getItem("lkcheck"+i)==="1";el.onchange=()=>localStorage.setItem("lkcheck"+i,el.checked?"1":"0")});
- $("notesBox").value=localStorage.getItem("lknotes")||"";$("notesBox").oninput=()=>localStorage.setItem("lknotes",$("notesBox").value);
+ checkboxList("bumpChecks",bump,"bump"); checkboxList("criticalChecks",critical,"crit"); checkboxList("postChecks",post,"post");
+ const sessions=["P1","P2","QF","R1","R2","R3"];
+ $("pressureBody").innerHTML=sessions.map(s=>`<tr><td>${s}</td><td><input id="cold${s}"></td><td><input id="hot1${s}"></td><td><input id="hot2${s}"></td><td><input id="note${s}"></td></tr>`).join("");
+ ["engSession","engAmbient","engTrack","engSpeed","rideHeight","camber","toe","bias","notesBox"].forEach(id=>saveInput($(id)));
+ sessions.forEach(s=>["cold","hot1","hot2","note"].forEach(p=>saveInput($(p+s))));
+ ["fuelMins","lapSec","burn"].forEach(id=>{const el=$(id);el.value=localStorage.getItem(id)||el.value;el.oninput=()=>{localStorage.setItem(id,el.value);calcFuel()}});
+ calcFuel();
  $("soundBtn").onclick=()=>{try{const ctx=new(window.AudioContext||window.webkitAudioContext)();const o=ctx.createOscillator(),g=ctx.createGain();o.connect(g);g.connect(ctx.destination);o.frequency.value=880;g.gain.value=.08;o.start();setTimeout(()=>o.stop(),250)}catch(e){alert("Sound blocked on this browser.")}};
  tick();setInterval(tick,1000);
  if("serviceWorker" in navigator){navigator.serviceWorker.register("service-worker.js").catch(()=>{})}

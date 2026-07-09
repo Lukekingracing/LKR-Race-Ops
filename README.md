@@ -1,3 +1,2 @@
 # LK Race Ops
-
-Version 1 weekend dashboard.
+Race-ready V1 for Townsville GR Cup.
